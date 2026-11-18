@@ -295,7 +295,7 @@ function sharedApp(body){
   up.onclick=()=>fi.click();rf.onclick=()=>{last='';load()};
   fi.onchange=async()=>{
     const f=fi.files[0];fi.value='';if(!f)return;
-    if(f.size>5*1048576){st.textContent='5 MBまでのファイルを選んでください';return}
+    if(f.size>200*1048576){st.textContent='200 MBまでのファイルを選んでください';return}
     st.textContent='アップロード中…';
     try{
       const data=await new Promise((ok,ng)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=ng;r.readAsDataURL(f)});
